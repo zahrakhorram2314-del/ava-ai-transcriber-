@@ -1,0 +1,10 @@
+{
+  "name": "Avā AI — Persian Voice to Text",
+  "description": "سامانه هوشمند و امن تبدیل صوت و گفتار فارسی به متن دقیق با هوش مصنوعی و رعایت حریم خصوصی",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
