@@ -12,7 +12,7 @@ Avā AI is a multilingual speech-to-text application powered by Google's Gemini 
 
 ## 📸 Project Preview
 
-![Avā AI Transcriber](assets/screenshots/Screenshot_20261101_231201_Chrome.jpg)
+![Avā AI Transcriber](Screenshot_۲۰۲۶۱۱۰۱_۲۳۱۲۰۱_Chrome.jpg)
 
 ✨ Key Features
 
