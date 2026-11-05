@@ -7,6 +7,9 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
 ![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
 
+<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/git.gif" width="25" height="25" />
+
+
 
 Avā AI — AI-Powered Audio Transcription
 
