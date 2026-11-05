@@ -7,8 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
 ![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
 
-
-<img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="45" />
+<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3a4/512.gif" width="40" alt="🎙️">
 
 Avā AI — AI-Powered Audio Transcription
 
