@@ -25,7 +25,6 @@ Check out our detailed [Case Study & Product Design Journey](./docs/case-study.m
 
 ✨ Key Features
 
-<h3><img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="28" height="28" /> پروژه ضبط صدا / Voice Recorder</h3>
 1. Audio Input & Processing
 
 - Upload audio files directly from your device.
