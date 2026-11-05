@@ -8,9 +8,7 @@
 ![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
 
 
-<img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30" height="30" alt="recording" />
-
-
+<img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="45" />
 
 Avā AI — AI-Powered Audio Transcription
 
