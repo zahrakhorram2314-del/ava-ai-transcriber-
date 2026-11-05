@@ -15,6 +15,9 @@ Avā AI — AI-Powered Audio Transcription
 
 Avā AI is a multilingual speech-to-text application powered by Google's Gemini API. It converts audio recordings into editable text, with separate output modes for verbatim transcription and improved readability.
 
+📖 **Interested in the UX & Design decisions?** 
+Check out our detailed [Case Study & Product Design Journey](./docs/case-study.md).
+
 
 ## 📸 Project Preview
 
