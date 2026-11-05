@@ -8,11 +8,6 @@
 ![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
 
 
-<p align="center">
-  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a4.png" width="40">
-  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50a.png" width="30">
-</p>
-
 Avā AI — AI-Powered Audio Transcription
 
 Avā AI is a multilingual speech-to-text application powered by Google's Gemini API. It converts audio recordings into editable text, with separate output modes for verbatim transcription and improved readability.
