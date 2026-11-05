@@ -2,6 +2,12 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=10,24,15&height=200&section=header&text=ava_ai&fontSize=80&animation=twinkle&fontColor=ffffff" />
 </div>
 
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
+![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
+
+
 
 
 
