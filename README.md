@@ -9,9 +9,9 @@
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/stevenlei/recording-animation/main/microphone.gif" width="55" alt="Audio Recording">
+  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a4.png" width="40">
+  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50a.png" width="30">
 </p>
-
 
 Avā AI — AI-Powered Audio Transcription
 
