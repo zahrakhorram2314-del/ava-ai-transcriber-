@@ -1,3 +1,12 @@
+
+<p align="center">
+  <img src="./assets/overview-demo.gif" alt="Ava AI Overview" width="700">
+</p>
+
+
+
+
+
 Avā AI — Designing a Multilingual AI Transcription Experience
 
 A UX and AI-assisted product development case study
