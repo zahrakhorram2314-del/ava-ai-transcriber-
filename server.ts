@@ -269,6 +269,7 @@ const stitched = customInstructions
       spokenLanguage
     )
   : stitchedBase;
+    
     // Final response
     sendEvent({
       type: 'complete',
