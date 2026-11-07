@@ -386,8 +386,17 @@ const customInstructions =
       chunkResults.push(r);
     }
 
-    const stitched = stitchTranscripts(chunkResults);
+    const stitchedBase = stitchTranscripts(chunkResults);
 
+const stitched = customInstructions
+  ? await formatTranscriptWithInstructions(
+      ai,
+      stitchedBase,
+      customInstructions,
+      requestedMode,
+      spokenLanguage || 'auto'
+    )
+  : stitchedBase;
     res.json({
       success: true,
       modelUsed: stitched.modelUsed,
