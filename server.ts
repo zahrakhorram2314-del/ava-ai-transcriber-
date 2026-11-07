@@ -332,7 +332,11 @@ app.post('/api/transcribe', async (req, res) => {
     }
 
     const { audioBase64, mimeType, fileName, spokenLanguage } = req.body;
-
+const requestedMode = req.body?.requestedMode || 'exact';
+const customInstructions =
+  typeof req.body?.customInstructions === 'string'
+    ? req.body.customInstructions.trim().slice(0, 4000)
+    : '';
     if (!audioBase64 || typeof audioBase64 !== 'string') {
       return res.status(400).json({
         error: 'NO_AUDIO_DATA',
