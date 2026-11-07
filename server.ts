@@ -86,7 +86,11 @@ app.post('/api/transcribe-stream', upload.single('audio'), async (req, res) => {
   const originalFileName = req.body?.fileName || uploadedFile?.originalname || 'Audio file';
   const requestedMode = req.body?.requestedMode || 'exact';
   const spokenLanguage = req.body?.spokenLanguage || 'auto';
-
+const customInstructions =
+  typeof req.body?.customInstructions === 'string'
+    ? req.body.customInstructions.trim().slice(0, 4000)
+    : '';
+  
   // Set SSE streaming headers
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
   res.setHeader('Cache-Control', 'no-cache');
