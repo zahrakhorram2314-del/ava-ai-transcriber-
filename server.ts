@@ -12,6 +12,7 @@ import {
   sliceAudioIntoChunks,
   transcribeChunk,
   stitchTranscripts,
+  formatTranscriptWithInstructions,
   ChunkTranscriptionResult,
 } from './src/server/audioService.ts';
 
