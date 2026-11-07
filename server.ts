@@ -258,8 +258,17 @@ const customInstructions =
       message: 'Stitching transcripts and applying clean punctuation formatting...',
     });
 
-    const stitched = stitchTranscripts(chunkResults);
+    const stitchedBase = stitchTranscripts(chunkResults);
 
+const stitched = customInstructions
+  ? await formatTranscriptWithInstructions(
+      ai,
+      stitchedBase,
+      customInstructions,
+      requestedMode,
+      spokenLanguage
+    )
+  : stitchedBase;
     // Final response
     sendEvent({
       type: 'complete',
