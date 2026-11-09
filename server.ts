@@ -389,13 +389,18 @@ const customInstructions =
     const stitchedBase = stitchTranscripts(chunkResults);
 
 const stitched = customInstructions
-  ? await formatTranscriptWithInstructions(
-      ai,
-      stitchedBase,
-      customInstructions,
-      requestedMode,
-      spokenLanguage || 'auto'
-    )
+  ? {
+      ...stitchedBase,
+      editedTranscript: await formatTranscriptWithInstructions(
+        ai,
+        requestedMode === 'edited' && stitchedBase.editedTranscript?.trim()
+          ? stitchedBase.editedTranscript
+          : stitchedBase.exactTranscript,
+        customInstructions,
+        spokenLanguage || 'auto'
+      ),
+    }
+  : stitchedBase;
   : stitchedBase;
     res.json({
       success: true,
