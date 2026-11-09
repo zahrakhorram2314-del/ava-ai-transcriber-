@@ -392,13 +392,7 @@ Preserve its language unless the user explicitly requests another language.`;
     'Could not generate the requested custom output.'
   );
 }
-export async function formatTranscriptWithInstructions(
-  ai: GoogleGenAI,
-  stitched: any,
-  customInstructions: string,
-  requestedMode: string,
-  spokenLanguage: string
-) {
+
   const prompt = `You are a transcript editor.
 Apply the user's instructions to the transcript below.
 Do not add facts that are not in the transcript.
