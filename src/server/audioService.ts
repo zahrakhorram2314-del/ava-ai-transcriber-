@@ -393,29 +393,3 @@ Preserve its language unless the user explicitly requests another language.`;
   );
 }
 
-  const prompt = `You are a transcript editor.
-Apply the user's instructions to the transcript below.
-Do not add facts that are not in the transcript.
-Keep the original language of the transcript.
-
-User instructions:
-${customInstructions}
-
-Transcript:
-${stitched.exactTranscript}`;
-
-  try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-flash-latest',
-      contents: prompt,
-    });
-
-    const text = response.text?.trim();
-    if (!text) return stitched;
-
-    return { ...stitched, editedTranscript: text };
-  } catch (err) {
-    console.error('[Avā AI] Custom formatting failed:', err);
-    return stitched;
-  }
-}
