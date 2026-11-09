@@ -405,7 +405,6 @@ const stitched = customInstructions
       ),
     }
   : stitchedBase;
-  : stitchedBase;
     res.json({
       success: true,
       modelUsed: stitched.modelUsed,
