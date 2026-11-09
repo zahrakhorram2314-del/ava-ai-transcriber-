@@ -1,161 +1,128 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=10,24,15&height=200&section=header&text=ava_ai&fontSize=80&animation=twinkle&fontColor=ffffff" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=10,24,15&height=200&section=header&text=Av%C4%81%20AI&fontSize=80&animation=twinkle&fontColor=ffffff" />
 </div>
+
+<div align="center">
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
 ![Gemini API](https://img.shields.io/badge/Powered%20by-Gemini%20API-8E44AD)
 
+**Turn spoken words into text you can work with.**
 
+Avā AI is a multilingual audio transcription app built with Google's Gemini API. It helps users turn recordings into editable text, whether they want to keep speech close to the original or make the transcript easier to read.
 
+</div>
 
-Avā AI — AI-Powered Audio Transcription
+📖 **How was the experience designed?**  
+Explore the [UX & Product Design Case Study](./docs/case-study.md) for the thinking behind the interface and product decisions.
 
-Avā AI is a multilingual speech-to-text application powered by Google's Gemini API. It converts audio recordings into editable text, with separate output modes for verbatim transcription and improved readability.
-
-📖 **Interested in the UX & Design decisions?** 
-Check out our detailed [Case Study & Product Design Journey](./docs/case-study.md).
-
-
-## 📸 Project Preview
+## Preview
 
 ![Avā AI Transcriber](Screenshot_۲۰۲۶۱۱۰۴_۱۲۵۹۵۳_Chrome.png)
 
-✨ Key Features
+## What you can do with Avā AI
 
-1. Audio Input & Processing
+### 🎙️ Add and prepare audio
+- Upload an audio file or record directly through your browser.
+- Preview audio before starting transcription.
+- Work with MP3, WAV, M4A, AAC, WebM, OGG, and FLAC files.
+- Process files up to approximately 100 MB and 75 minutes long.
+- Inspect audio duration with FFprobe and prepare longer files with FFmpeg.
 
-- Upload audio files directly from your device.
-- Record audio using your browser's microphone.
-- Preview audio before transcription.
-- Support for MP3, WAV, M4A, AAC, WebM, OGG, and FLAC formats.
-- File size limit of approximately 100 MB.
-- Audio duration limit of 75 minutes.
-- Automatic audio duration inspection using FFprobe.
-- Audio conversion and segmentation using FFmpeg.
+### 🤖 Choose how your transcript reads
 
-2. Gemini-Powered Transcription
+Avā AI offers two output modes:
 
-- Speech-to-text processing through Google's Gemini API.
-- Automatic spoken-language detection.
-- Manual language selection.
-- Support for custom language input.
-- Structured JSON responses for transcription results.
-- Sequential audio processing for longer recordings.
+- **Verbatim:** Keeps the speaker's wording, repetitions, informal expressions, and natural speech patterns.
+- **Edited:** Improves punctuation, spelling, and readability while preserving the original meaning.
 
-Two transcription modes:
+You can also let the app detect the spoken language, select a language yourself, or enter a custom language.
 
-- Verbatim: Preserves spoken wording, repetitions, informal expressions, and natural speech patterns.
-- Edited: Improves punctuation, spelling, and readability while retaining the original meaning.
+### ⏱️ Process longer recordings
+Long recordings are handled in sequential audio segments:
+- Audio is split into smaller parts.
+- Each segment is transcribed individually.
+- Results are brought back together in their original order.
+- Server-Sent Events (SSE) provide progress updates while processing.
+- Partial results can appear before the full transcript is ready.
 
-3. Long-Audio Processing
+### ✍️ Review, edit, and export
+- Edit the transcript in the app.
+- Switch between Verbatim and Edited versions.
+- Restore the originally generated transcript.
+- Copy text or export it as a TXT file.
+- Review details such as detected language, speaking tone, word count, and processing information.
 
-Avā AI includes a chunk-based processing workflow for longer recordings.
-
-- Audio files are divided into sequential segments.
-- Each segment is processed individually.
-- Transcription results are assembled in chronological order.
-- Progress updates are delivered through Server-Sent Events (SSE).
-- Partial transcription results can be displayed during processing.
-
-4. Transcript Editing & Export
-
-- Edit generated transcripts directly in the application.
-- Switch between Verbatim and Edited outputs.
-- Restore the original generated transcript.
-- Copy text to the clipboard.
-- Export transcripts as TXT files.
-- View detected language, speaking tone, word count, and processing information.
-
-5. Multilingual Interface
-
-- Interface localization for 11 languages.
-- Right-to-left (RTL) support for Persian and Arabic.
-- Selectable spoken-language options.
-- Custom language entry.
+### 🌍 Use the interface in your language
+- Interface localization in 11 languages.
+- Right-to-left (RTL) layouts for Persian and Arabic.
+- Responsive design for mobile and desktop.
 - Vazirmatn typography for Persian and Arabic text.
-- Responsive interface for mobile and desktop devices.
 
-🛠️ Technology Stack
+## Built with
 
-Technology| Purpose
-React 19| Frontend application
-TypeScript| Type-safe development
-Vite| Development and build tooling
-Express.js| Backend server
-Google Gemini API| AI-powered transcription
-"@google/genai"| Gemini SDK integration
-FFmpeg| Audio conversion and segmentation
-FFprobe| Audio metadata and duration inspection
-Multer| Multipart audio file uploads
-Tailwind CSS| Interface styling
-Motion| UI animations
-Lucide React| Interface icons
-dotenv| Environment configuration
+| Technology | Role |
+|---|---|
+| React 19 | Frontend |
+| TypeScript | Type-safe development |
+| Vite | Development and build tooling |
+| Express.js | Backend server |
+| Google Gemini API | AI-powered transcription |
+| `@google/genai` | Gemini SDK integration |
+| FFmpeg / FFprobe | Audio conversion, segmentation, and inspection |
+| Multer | Audio file uploads |
+| Tailwind CSS | Interface styling |
+| Motion | UI animations |
+| Lucide React | Interface icons |
+| dotenv | Environment configuration |
 
-⚙️ Backend Architecture
+## How it works
 
-The application uses an Express.js backend to manage audio uploads and communicate with Gemini.
-
-Main processing workflow:
-
-1. The user uploads an audio file or records audio through the browser.
+1. The user uploads an audio file or records audio in the browser.
 2. The frontend sends the audio to the backend.
-3. The backend validates the uploaded file and checks its duration.
-4. FFmpeg prepares the audio and splits longer recordings into smaller segments.
-5. Each segment is sent to Gemini for transcription.
-6. The backend combines the generated results.
-7. Progress and completion events are delivered to the frontend using Server-Sent Events.
-8. The user can review, edit, copy, or export the final transcript.
+3. The backend validates the file and checks its duration.
+4. FFmpeg prepares the audio and splits longer recordings into segments.
+5. The segments are sent to Gemini for transcription.
+6. The backend assembles the results in chronological order.
+7. Progress updates are streamed to the frontend using Server-Sent Events.
+8. The user reviews, edits, copies, or exports the transcript.
 
-API Endpoints
+## Backend API
 
-Endpoint| Method| Purpose
-"/api/health"| GET| Backend health and configuration status
-"/api/transcribe-stream"| POST| Audio transcription with streaming progress
-"/api/transcribe"| POST| Alternative transcription request
+| Endpoint | Method | Purpose |
+|---|---|---|
+| `/api/health` | GET | Backend health and configuration status |
+| `/api/transcribe-stream` | POST | Transcription with streaming progress |
+| `/api/transcribe` | POST | Alternative transcription request |
 
-🔐 Privacy & Data Handling
+## Privacy and data handling
 
-- Gemini API requests are handled by the server.
-- The API key is read from the server environment rather than exposed in frontend code.
-- Uploaded audio is processed using temporary server-side files.
-- The backend includes cleanup routines for uploaded files and temporary processing directories.
-- No public transcript-sharing feature is required for the core workflow.
+- Gemini API requests are made through the backend.
+- The API key is read from the server environment, not exposed in frontend code.
+- Uploaded audio is handled using temporary server-side files.
+- Cleanup routines are included for uploaded files and temporary processing directories.
+- Public transcript sharing is not required for the core workflow.
 
-Users should review the application's privacy practices and deployment configuration before submitting sensitive recordings.
+**Please review the privacy practices and deployment configuration before submitting sensitive recordings.**
 
-🧪 Testing & Real-World Usage
+## Testing and limitations
 
-Avā AI has been tested with real audio recordings to evaluate its core transcription workflow.
+The core workflow has been tested with audio recordings, including file upload, transcription in both modes, transcript editing, copying, and TXT export.
 
-Testing covered:
+Transcription quality can vary with audio clarity, background noise, accents, recording conditions, and language. Generated text should be checked before being used for official or important purposes.
 
-- Uploading and processing audio files.
-- Generating Verbatim and Edited transcripts.
-- Reviewing and editing generated text.
-- Copying transcripts and exporting TXT files.
-- Following the audio-processing workflow from upload to final output.
-
-The purpose of testing was to evaluate how the main features work together in practical use.
-
-Transcription quality may vary depending on audio clarity, background noise, accents, recording conditions, and language. Generated transcripts should be reviewed before being used for official or important purposes.
-
-🚀 Project Goals
-
-Avā AI aims to make audio transcription more accessible through a straightforward interface, multilingual support, and practical tools for reviewing and managing generated text.
-
-The project brings together AI integration, audio processing, and user-focused interface design in a single application.
-
-📌 Current Limitations
-
-- Transcription requires a valid Gemini API key configured on the server.
-- Processing time depends on audio length, network conditions, and model availability.
-- Transcription accuracy is not guaranteed for every language or recording condition.
-- Microphone recording depends on browser support and user permission.
+A few things to keep in mind:
+- A valid Gemini API key must be configured on the server.
+- Processing time depends on recording length, network conditions, and model availability.
+- Microphone recording requires browser support and user permission.
 - FFmpeg and FFprobe must be available in the deployment environment.
 
-📄 License
+## Why I built it
 
-Apache License 2.0.
+Avā AI is an exploration of how AI, audio processing, and thoughtful interface design can come together in a practical tool. The goal is simple: make transcription easier to use, easier to review, and more accessible across languages and devices.
+
+## License
+
+This project is licensed under the [Apache License 2.0](./LICENSE).
