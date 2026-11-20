@@ -15,6 +15,9 @@ Avā AI is a multilingual audio transcription app built with Google's Gemini API
 
 </div>
 
+🧪 **How is quality evaluated?**  
+See the [Quality Assurance & Evaluation](./docs/quality-assurance.md) page for manual test scenarios, automated coverage, AI output evaluation criteria, and known limitations.
+
 📖 **How was the experience designed?**  
 Explore the [UX & Product Design Case Study](./docs/case-study.md) for the thinking behind the interface and product decisions.
 
