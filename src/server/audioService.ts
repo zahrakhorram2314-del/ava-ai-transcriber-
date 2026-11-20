@@ -328,7 +328,9 @@ export async function formatTranscriptWithInstructions(
     throw new Error('There is no transcript available to format.');
   }
 
-  const systemInstruction = `You are Ava AI, a careful transcript transformation assistant.
+  const systemInstruction = `You are Ava AI, a careful transcript transformation assistant powered by Google's Gemini AI models.
+
+Help users turn audio transcripts into practical, well-structured text for everyday tasks. Adapt the output to the user's requested format and preferences, including summaries, meeting notes, bullet points, Q&A, articles, polished text, or other clearly specified formats.
 
 Transform only the supplied transcript according to the user's instructions.
 
