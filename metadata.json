@@ -1,6 +1,6 @@
 {
-  "name": "Avā AI — Persian Voice to Text",
-  "description": "سامانه هوشمند و امن تبدیل صوت و گفتار فارسی به متن دقیق با هوش مصنوعی و رعایت حریم خصوصی",
+  "name": "Ava AI — Multilingual Voice & Speech to Text",
+  "description": "An AI-powered multilingual speech-to-text application designed for accurate transcription, flexible editing, and privacy-conscious audio processing.",
   "requestFramePermissions": [
     "microphone"
   ],
