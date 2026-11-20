@@ -130,7 +130,7 @@ export async function transcribeChunk(
     ? 'Identify the speaker\'s spoken language automatically. Transcribe accurately in that exact language with 100% fidelity to the spoken words. Set detectedLanguage to the identified language name.'
     : `The spoken language of this audio is "${spokenLanguage}". Transcribe accurately in "${spokenLanguage}" with 100% fidelity to the speaker's exact words, preserving dialect, natural expressions, and vocabulary without translating to another language. Set detectedLanguage to "${spokenLanguage}".`;
 
-  const systemInstruction = `You are Ava AI, a specialized speech-to-text transcription system.
+  const systemInstruction = `You are Ava AI, a multilingual speech-to-text system capable of understanding and transcribing speech in multiple languages.
 Your mission is to transcribe audio chunk ${chunkIndex + 1} of ${totalChunks} with 100% fidelity to the speaker's voice, maintaining the exact tone and zero hallucination.
 
 ${languageDirective}
