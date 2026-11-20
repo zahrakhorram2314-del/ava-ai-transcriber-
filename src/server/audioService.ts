@@ -38,7 +38,7 @@ export async function probeAudioDuration(filePath: string): Promise<number> {
     const parsed = parseFloat(stdout.trim());
     return isNaN(parsed) || parsed < 0 ? 0 : parsed;
   } catch (err: any) {
-    console.warn('[Avā AI] ffprobe error, falling back to 0 duration:', err?.message);
+    console.warn('[Ava AI] ffprobe error, falling back to 0 duration:', err?.message);
     return 0;
   }
 }
@@ -191,7 +191,7 @@ Output strict JSON:
       modelUsed = modelCandidate;
       break;
     } catch (candidateErr: any) {
-      console.warn(`[Avā AI Chunker] Model ${modelCandidate} failed on chunk ${chunkIndex}:`, candidateErr?.message || candidateErr);
+      console.warn(`[Ava AI Chunker] Model ${modelCandidate} failed on chunk ${chunkIndex}:`, candidateErr?.message || candidateErr);
       lastError = candidateErr;
     }
   }
@@ -223,7 +223,7 @@ Output strict JSON:
     exactTranscript: parsed.exactTranscript || parsed.text || '',
     editedTranscript: parsed.editedTranscript || parsed.exactTranscript || parsed.text || '',
     detectedLanguage: parsed.detectedLanguage || (spokenLanguage !== 'auto' ? spokenLanguage : undefined),
-    detectedTone: parsed.detectedTone || 'محاوره‌ای و طبیعی',
+    detectedTone: parsed.detectedTone || 'Conversational and natural',
     modelUsed,
   };
 }
@@ -266,7 +266,7 @@ export function stitchTranscripts(
       editedParts.push(cleanEdited);
     }
 
-    if (chunk.detectedTone && chunk.detectedTone !== 'بدون لحن' && chunk.detectedTone !== 'None') {
+    if (chunk.detectedTone && chunk.detectedTone !== 'No tone detected' && chunk.detectedTone !== 'None') {
       dominantTone = chunk.detectedTone;
     }
     if (chunk.detectedLanguage && !dominantLang) {
@@ -289,7 +289,7 @@ export function stitchTranscripts(
       exactTranscript: placeholder,
       editedTranscript: placeholder,
       detectedLanguage: dominantLang,
-      detectedTone: 'بدون لحن',
+      detectedTone: 'No tone detected',
       modelUsed: primaryModel,
     };
   }
@@ -382,7 +382,7 @@ Preserve its language unless the user explicitly requests another language.`;
       lastError = err;
 
       console.warn(
-        `[Avā AI] Custom formatting model ${model} failed:`,
+        `[Ava AI] Custom formatting model ${model} failed:`,
         err?.message || err
       );
     }
